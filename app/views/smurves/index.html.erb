@@ -1,0 +1,21 @@
+<h1>Listing smurves</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @smurves.each do |smurf| %>
+  <tr>
+    <td><%= link_to 'Show', smurf %></td>
+    <td><%= link_to 'Edit', edit_smurf_path(smurf) %></td>
+    <td><%= link_to 'Destroy', smurf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Smurf', new_smurf_path %>
