@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105013343) do
+ActiveRecord::Schema.define(:version => 20121104220246) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20121105013343) do
     t.integer  "project_id"
     t.string   "project_name"
     t.datetime "due_date"
-    t.string   "type"
+    t.string   "components"
     t.string   "notes"
     t.string   "client_name"
     t.string   "project_manager_assigned"
@@ -46,11 +46,6 @@ ActiveRecord::Schema.define(:version => 20121105013343) do
     t.string   "description"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
-  end
-
-  create_table "smurves", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
 end
