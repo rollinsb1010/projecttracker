@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration
       t.integer :project_id
       t.string :project_name
       t.datetime :due_date
-      t.string :type
+      t.string :components
       t.string :notes
       t.string :client_name
       t.string :project_manager_assigned

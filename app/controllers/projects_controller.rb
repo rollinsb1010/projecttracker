@@ -1,37 +1,49 @@
 class ProjectsController < ApplicationController
+  respond_to :html, :xml
+  
   def index
      @projects = Project.all
+     respond_with @projects
   end
   
   def new
-    @projects = Project.all
+     @project = Project.new
+     respond_with @project
   end
   
-  def show
-    @projects = Project.all    
+  def create
+     @project = Project.new(params[:project])
+     if @project.save
+       cookies[:last_project_id] = @project.id
+       flash[:notice] = "Successfully created project."
+     end
+     respond_with(@project)  
   end
+    
+  def show
+     @project = Project.find(params[:id])
+     respond_with @project  
+  end
+  
+  def edit
+    @project = Project.find(params[:id])
+    respond_with @project
+  end  
   
   def destroy
-    @projects = Project.all
+      @project = Project.find(params[:id])
+      @project.destroy
+      flash[:notice] = "Successfully destroyed project."
+      respond_with(@project)
   end
   
   def update
-    @projects = Project.find(params[:id])
-      if @projects.update_attributes(params[:project])
-        redirect_to @projects
-      else
-        render "edit"
-      end
-   end 
-   
-  def edit
-    @projects = Project.find(params[:id])
-    if @projects.edit_attributes(params[:project])
-      redirect_to @projects
-    else
-      render :text => "Project does not exist"  
-    end
-  end    
-      
-  
+    @project = Project.find(params[:id])
+      if @project.update_attributes(params[:project])
+        flash[:notice] = "Successfully updated project."
+        #redirect_to @projects
+      end  
+      respond_with(@project)  
+        #render "edit"
+  end 
 end

@@ -1,5 +1,4 @@
 Projecttracker::Application.routes.draw do
-  resources :smurves
 
   get "projects/index"
 

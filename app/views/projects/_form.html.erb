@@ -1,5 +1,5 @@
 <%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
+  <!-- <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
@@ -8,10 +8,22 @@
         <li><%= msg %></li>
       <% end %>
       </ul>
-    </div>
+    </div> -->
   <% end %>
-
+  
+   <div class="field">
+    <%= f.label :project_name %>
+    <%= f.text_field :project_name %>
+  </div>
+  <div class="field">
+    <%= f.label :due_date %>
+    <%= f.file_field :due_date %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit' %>
+    <%= link_to 'Nevermind', projects_path, class: 'button' %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Add Project' %>
   </div>
 <% end %>
