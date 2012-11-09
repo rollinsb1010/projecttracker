@@ -26,23 +26,9 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', projects_path %>
+		
 
-
-		<%= semantic_form_for @projects do |f| %>
-    <%= f.inputs do %>
-       <%= f.input :project_name, :input_html => { :disabled => true } %>
-       <%= f.input :due_date %>
-       <%= f.input :components, :as => :radio %>
-       <%= f.input :client_name %>
-      <%= f.input :medium %>
-    <% end %>
-    <%= f.actions do %>
-      <%= f.action :submit, :as => :button %>
-      <%= f.action :cancel, :as => :link %>
-    <% end %>
-  <% end %>
-
-	<!-- <table width="1000px" style="width:1000px;">
+	<table width="1000px" style="width:1000px;">
 		<tr>
 		<th>Project Summary</th>
 		<th></th>
@@ -59,7 +45,7 @@
 			<td><%= project.medium %></td>
 			<% end %>
 		</tr>	
-		</table> -->
+		</table>
 		<table>	
 			<tr>
 			<td><div id="progressbar"></div></td>
