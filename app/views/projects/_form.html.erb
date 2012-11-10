@@ -1,24 +1,20 @@
-<%= form_for(@projects) do |f| %>
-  
-   <div class="field">
-    <%= f.label :project_name %>
-    <%= f.text_field :project_name %>
-  </div>
-  <div class="field">
-    <%= f.label :due_date %>
-    <%= f.text_field :due_date %>
-  </div><br />
-  <div class="actions">
-    <%= f.submit 'Submit' %>
-    <%= link_to 'Nevermind', projects_path, class: 'button' %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Add Project' %>
-  </div>
-   <div class="output">
-    <%= f.label :project_name %>
-    <%= :project_name %>
-  </div>
-<% end %>
+<%= semantic_form_for @project do |f| %>
+    <%= f.inputs do %>
+       <%= f.input :project_name %>
+       <%= f.input :due_date %>
+       <%= f.input :components, :as => :radio %>
+       <%= f.input :client_name %>
+      <%= f.input :medium %>
+    <% end %>
+    <%= f.actions do %>
+      <%= f.action :submit, :as => :button %>
+      <%= f.action :cancel, :as => :link %>
+    <% end %>
+  <% end %>
+
+
+
+
+
 
 

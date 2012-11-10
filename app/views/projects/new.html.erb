@@ -5,19 +5,7 @@
 <%= link_to 'Back', projects_path %>
 
 
-		<%= semantic_form_for @project do |f| %>
-    <%= f.inputs do %>
-       <%= f.input :project_name %>
-       <%= f.input :due_date %>
-       <%= f.input :components, :as => :radio %>
-       <%= f.input :client_name %>
-      <%= f.input :medium %>
-    <% end %>
-    <%= f.actions do %>
-      <%= f.action :submit, :as => :button %>
-      <%= f.action :cancel, :as => :link %>
-    <% end %>
-  <% end %>
+		
 
 
 
