@@ -7,14 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="<%= params[:controller].parameterize %>_controller">
-	
-<div class="container">  
-  <%= yield %>  
-</div>  
-<div class="navbar navbar-fixed-top">  
-  <div class="navbar-inner">  
-    <div class="container">  
-    	<div class="adminnav">
+	<div class="navbar">
+  <div class="navbar-inner">     
+   	<div class="adminnav"> 
+     <div class="container">  
+    	
   <% if admin_signed_in? %>
     Signed in as <%= current_admin.email %>. Not you?
     <%= link_to "Sign out", destroy_admin_session_path %>
@@ -41,6 +38,11 @@
     </div>  
   </div>  
 </div>  
+	
+<div class="container">  
+  <%= yield %>  
+</div>  
+ 
 
 </body>
 </html>
