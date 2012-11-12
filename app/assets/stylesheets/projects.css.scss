@@ -1,47 +1,124 @@
  // #projects_controller
   
   body {
-    background-color: #FFF;
-    color: #333;
-    font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 20px;
-    line-height: 18px;
-    width:1000px;
-    height:800px;
-    padding:20px;
+    // background-color: #FFF;
+    // color: #333;
+    // font-family: verdana, arial, helvetica, sans-serif;
+    // font-size: 20px;
+    // line-height: 18px;
+    // width: 600px;
+    // height: 600px;
+    // padding: 20px;
   }
 
   p, ol, ul, td {
-    font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
+    // font-family: verdana, arial, helvetica, sans-serif;
+    // font-size: 13px;
+    // line-height: 18px;
   }
   
   h1, th {
-    font-family: verdana, arial, helvetica, sans-serif;
-    font-size:24px;
-    font-weight:bold;
-    text-align:center;
+    // font-family: verdana, arial, helvetica, sans-serif;
+    // font-size: 24px;
+    // font-weight: bold;
+    // text-align: center;
   }  
   
   
-  div#adminnav {
+  div.adminnav {
     font-size: 11px;
     font-weight: bold;
     vertical-align: top;
+    text-align: right;
+    color: blue;
   }
   
   div#progressbar {
-    width: 200px;
-    background-color:blue;
-    text-align:right;
+    width: 150px;
+    background-color: blue;
+    text-align: right;
   }
   
   div#statustable {
-    width:1000px;
+    width: 800px;
     height: 100px;
-    background-color:gray;
-    padding:20px;
+    background-color: gray;
+    padding: 20px;
+  }
+  
+  div.navbar-fixed-top {
+    background-color: transparent;
+    padding-top: 60px;
+  }
+  
+  body.index {
+    padding-top: 80px;
+  }
+  
+  div.form {
+    padding: 60px 20px 20px 20px; 
+    
+    //height: 100px;
+    
+  }
+  
+  div.project_id {
+    padding-bottom: 20px;
+    //text-align: left;
+  }
+  
+   div.components {
+    padding-bottom: 20px;
+    //text-align: left;
+  }
+  
+   div.due_date {
+    padding-bottom: 20px;
+    //text-align: left;
+  }
+  
+   div.project_name {
+    padding-bottom: 20px;
+    //text-align: left;
+  }
+  
+   div.action_submit {
+    padding-bottom: 20px;
+    //text-align: left;
+  }
+  
+   div.action_cancel {
+    padding-bottom: 20px;
+    //text-align: left;
+  }
+  
+   div.client_name {
+    padding-bottom: 20px;
+    //text-align: left;
+  }
+  
+  div.percentage_complete {
+    padding-bottom: 20px;
+  }
+  
+  body#application {
+  background-color: blue;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+  a.brand {
+    font-size: 10px;
+  }
+  
+  form.span7 {
+    width: 10px;
   }
     
   

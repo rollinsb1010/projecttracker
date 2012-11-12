@@ -1,17 +1,33 @@
+
+<div class="form">
+<%= link_to 'Back', projects_path %><br /><br />
 <%= semantic_form_for @project do |f| %>
     <%= f.inputs do %>
+    <div class="project_id">
+       <%= f.input :project_id, :input_text => {:class => 'span7'} %>
+       </div>
+       <div class="project_name">
        <%= f.input :project_name %>
+       </div>
+       <div class="due_date">
        <%= f.input :due_date %>
-       <%= f.input :components, :as => :radio %>
+       </div><div class="components">
+       <%= f.input :components %>
+       </div><div class="client_name">
        <%= f.input :client_name %>
-      <%= f.input :medium %>
+       </div><div class="percentage_complete">
+       <%= f.input :percentage_complete %>
+       </div>
     <% end %>
     <%= f.actions do %>
+    <div class="action_submit">
       <%= f.action :submit, :as => :button %>
+      </div><div class="action_cancel">
       <%= f.action :cancel, :as => :link %>
+      </div>
     <% end %>
   <% end %>
-
+</div>
 
 
 
