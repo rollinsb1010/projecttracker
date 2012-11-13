@@ -1,4 +1,22 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ProjectTrakker</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script>
+    $(function() {
+        $( "#datepicker" ).datepicker({
+        });
+    });
+    </script>
+</head>
+<body>
 <div class="form">
 <%= link_to 'Back', projects_path %><br /><br />
 <%= semantic_form_for @project do |f| %>
@@ -10,7 +28,8 @@
        <%= f.input :project_name %>
        </div>
        <div class="due_date">
-       <%= f.input :due_date %>
+       <span style="text-align:left; font-weight:bold; background-color:gray; color:#fff;">
+       	3. Due Date</span>&nbsp;&nbsp;&nbsp;<input type="text" id="datepicker" />
        </div><div class="components">
        <%= f.input :components %>
        </div><div class="client_name">
@@ -28,6 +47,10 @@
     <% end %>
   <% end %>
 </div>
+</body>
+</html>
+	
+
 
 
 
