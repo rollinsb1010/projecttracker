@@ -1,16 +1,11 @@
-<%= link_to 'Edit', edit_attachment_path(@attachment) %> |
+
 <%= link_to 'Back', attachments_path %>
 
-<div id="attachments">
-  <% @attachments.each do |attachment| %>
-    <div class="attachment">
-      <%= attachment_tag attachment.attachment_url.to_s %>
-      <div class="name"><%= attachment.file_name %></div>
-      <div class="actions">
-        <%= link_to "edit", edit_attachment_path(attachment) %> |
-        <%= link_to "remove", attachment, :confirm => 'Are you sure?', :method => :delete %>
-      </div>
-    </div>
-  <% end %>
-  <div class="clear"></div>
-</div>
+<div class="form">
+<%= semantic_form_for @attachment do |f| %>
+    <%= f.inputs do %>
+       <div class="attachment_name">
+       <%= f.input :file_name %>
+       </div>
+    <% end %>
+<% end %>
