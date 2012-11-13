@@ -16,6 +16,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'#, :branch => 'static'
   gem 'less-rails'
+  gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
+  gem 'carrierwave', :git => 'git://github.com/jnicklas/carrierwave.git'
  
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

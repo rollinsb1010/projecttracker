@@ -13,6 +13,8 @@ class CreateProjects < ActiveRecord::Migration
       t.string :stage
       t.string :percentage_complete
       t.string :description
+      t.string :avatar
+      t.string :attachment_url
       t.timestamps
     end
   end
