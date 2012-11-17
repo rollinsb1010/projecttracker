@@ -1,7 +1,22 @@
-<p id="notice"><%= notice %></p>
+<%= @project.project_name %>
 
+<div id="attachments">
+  <% for attachment in @project.attachments %>
+    <div class="attachment">
+      <%= image_tag attachment.avatar_url(:thumb) if attachment.avatar? %>
+      <div class="name"><%= attachment.file_name %></div>
+      <div class="actions">
+        <%= link_to "edit", edit_attachment_path(attachment) %> |
+        <%= link_to "remove", attachment, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+</div>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-
+<p>
+  <%= link_to "Add an attachment", new_attachment_path(:project_id => @project) %> |
+  <%= link_to "Remove project", @project, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View Projects", projects_path %>
+</p>
 

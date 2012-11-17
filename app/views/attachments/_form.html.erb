@@ -1,11 +1,33 @@
 
-<%= link_to 'Back', attachments_path %>
-
-<div class="form">
-<%= semantic_form_for @attachment do |f| %>
-    <%= f.inputs do %>
-       <div class="attachment_name">
-       <%= f.input :file_name %>
-       </div>
+<html>
+	<body>
+    <div class="avatar">
+    <%= form_for @attachment, :html => {:multipart => true} do |f| %>
+    <% @attachment.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+   <% end %>
+    <%= f.hidden_field :project_id %>
+  <p>
+  	<%= f.label :file_name %><br />
+  	<%= f.text_field :file_name %>
+  </p>  
+  <p>
+    <%= f.file_field :avatar %>
+  </p>
+  <p><%= f.submit %></p>
+  </div>
     <% end %>
-<% end %>
+ 
+
+</body>
+</html>
+	
+
+
+
+
+
+   
+
+
+

@@ -1,5 +1,7 @@
 class Attachment < ActiveRecord::Base
-  attr_accessible :attachment_id, :attachment_url, :file_size, :file_name, :file_type
+  attr_accessible :file_name, :avatar, :project_id
   
    belongs_to :project
+   
+   mount_uploader :avatar, AvatarUploader
 end

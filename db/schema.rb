@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121113041249) do
+ActiveRecord::Schema.define(:version => 20121117201526) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -32,16 +32,15 @@ ActiveRecord::Schema.define(:version => 20121113041249) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
   create_table "attachments", :force => true do |t|
+    t.integer  "project_id"
     t.string   "file_name"
-    t.string   "file_type"
-    t.string   "attachment_url"
-    t.string   "file_size"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string   "avatar"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "projects", :force => true do |t|
-    t.integer  "project_id"
+    t.integer  "doclib_id"
     t.string   "project_name"
     t.datetime "due_date"
     t.string   "components"
@@ -50,11 +49,8 @@ ActiveRecord::Schema.define(:version => 20121113041249) do
     t.string   "project_manager_assigned"
     t.string   "account_manager_assigned"
     t.string   "medium"
-    t.string   "stage"
     t.string   "percentage_complete"
     t.string   "description"
-    t.string   "avatar"
-    t.string   "attachment_url"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
   end

@@ -18,7 +18,7 @@ group :assets do
   gem 'less-rails'
   gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
   gem 'carrierwave', :git => 'git://github.com/jnicklas/carrierwave.git'
- 
+  gem 'rmagick'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby

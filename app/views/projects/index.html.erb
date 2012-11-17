@@ -56,7 +56,7 @@
       <td><%= project.client_name %></td>
       <td><%= project.percentage_complete %></td>
       <td><div class="progressbar"></div></td>
-      <td><%= link_to project.avatar, project %></td>     
+      <td><%= link_to project.project_name, project %></td>     
       <td><%= link_to(edit_project_path(project), class: "btn btn-small") do %>
           Edit <i class="icon-edit icon-white"></i></td></tr>
         <% end %>
@@ -65,7 +65,7 @@
     <% end %>
   <tr>
   <% else %>
-    <td>Move along nothing to see here<td>
+    <td>No Projects Created<td>
   <% end %>
 </tr>
 </tbody>                                        

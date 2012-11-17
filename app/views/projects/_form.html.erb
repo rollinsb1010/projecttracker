@@ -26,9 +26,7 @@
 <%= link_to 'Back', projects_path %><br /><br />
 <%= semantic_form_for @project do |f| %>
     <%= f.inputs do %>
-    <div class="project_id">
-       <%= f.input :project_id %>
-       </div>
+
        <div class="project_name">
        <%= f.input :project_name %>
        </div>
@@ -49,18 +47,7 @@
       </div>
       </div>
     <% end %>
-    <div class="avatar">
-    <%= form_for @project, :html => {:multipart => true} do |f| %>
-  
-  <%= f.hidden_field :project_id %>
-  <p>
-    <%= f.file_field :avatar %>
-  </p>
-  <p><%= f.submit %></p>
-  </div>
-    <% end %>
   <% end %>
-
 </body>
 </html>
 	
