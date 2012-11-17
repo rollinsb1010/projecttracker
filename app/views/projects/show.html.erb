@@ -2,13 +2,16 @@
 
 <div id="attachments">
   <% for attachment in @project.attachments %>
-    <div class="attachment">
+    <div class="attachment_full">
+    	<%= image_tag attachment.avatar_url if attachment.avatar? %>
+    <div class="attachment_thumb">
       <%= image_tag attachment.avatar_url(:thumb) if attachment.avatar? %>
       <div class="name"><%= attachment.file_name %></div>
       <div class="actions">
         <%= link_to "edit", edit_attachment_path(attachment) %> |
         <%= link_to "remove", attachment, :confirm => 'Are you sure?', :method => :delete %>
       </div>
+    </div>
     </div>
   <% end %>
   <div class="clear"></div>

@@ -2,7 +2,6 @@
     <% @attachments.each do |attachment| %>
       <td><%= attachment.id %></td>
       <td><%= link_to attachment.id, attachment %></td>
-      <td><%= project.due_date %></td>
       <td><%= link_to attachment.file_name, attachment %></td>     
       <td><%= link_to(edit_attachment_path(attachment), class: "btn btn-small") do %>
           Edit <i class="icon-edit icon-white"></i></td></tr>
