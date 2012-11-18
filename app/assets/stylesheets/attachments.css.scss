@@ -1,0 +1,30 @@
+  // #attachments_controller
+  
+
+
+div.attachments {
+    width: 600px;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+  
+div.attachment_thumb {
+    width: 400px;
+    padding-bottom: 20px;
+    text-align: left;
+    // float: left;
+  }
+
+div.attachment_full {
+    width: 400px;
+    padding-bottom: 20px;
+    text-align: right;
+    // float: right;
+  }
+
+div.actions_menu {
+    width: 400px;
+    height: 100px;
+    vertical-align:top;
+    padding:20px;
+  }
