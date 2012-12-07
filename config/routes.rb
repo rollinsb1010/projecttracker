@@ -1,7 +1,7 @@
 Projecttracker::Application.routes.draw do
 
-  get "projects/index"
-  get "attachments/index"
+  # get "projects/index"
+  # get "attachments/index"
 
   devise_for :admins
 
