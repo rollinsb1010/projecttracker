@@ -14,19 +14,25 @@ gem 'devise'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'#, :branch => 'static'
   gem 'less-rails'
-  gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
   gem 'carrierwave', :git => 'git://github.com/jnicklas/carrierwave.git'
-  gem 'rmagick'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
-
+  gem 'less' 
   gem 'uglifier', '>= 1.0.3'
+  gem 'libv8', '3.11.8.3'
+  gem 'therubyracer', '0.11.0beta8'
+  
 end
 
-gem 'jquery-rails'
+  gem 'jquery-rails'
+  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git' #:branch => 'static' 
+  gem 'bootstrap-datepicker-rails'
+  gem 'execjs', '>=1.4.0'
+    
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  
+
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

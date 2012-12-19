@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>ProjectTrakker</title>
+
+  
+  <h2>ProjectTrakker</h2>
+ 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
-    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-    <input id="fileupload" type="file" name="files[]" data-url="server/php/" multiple>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-	<script src="js/vendor/jquery.ui.widget.js"></script>
-	<script src="js/jquery.iframe-transport.js"></script>
-	<script src="js/jquery.fileupload.js"></script>
-	<link rel="stylesheet" href="/resources/demos/style.css" />
-    <script>
-    $(function() {
-        $( "#datepicker" ).datepicker({
-        });
-    });
-    </script>
-</head>
-<body>
 <div class="form">
 <%= link_to 'Back', projects_path %><br /><br />
 <%= semantic_form_for @project do |f| %>
@@ -31,11 +14,13 @@
        <%= f.input :project_name %>
        </div>
        <div class="due_date">
-       <span style="text-align:left; font-weight:bold; background-color:gray; color:#fff;">
-       	3. Due Date</span>&nbsp;&nbsp;&nbsp;<input type="text" id="datepicker" />
-       </div><div class="components">
+       <%= f.label :due_date %><!-- <span style="text-align:left; font-weight:bold; background-color:gray; color:#fff;">
+       	3. Due Date</span>&nbsp;&nbsp;&nbsp; --><input type="text" value="01/06/2013" id="datepicker">
+       </div>
+       <div class="components">
        <%= f.input :components %>
-       </div><div class="client_name">
+       </div>
+       <div class="client_name">
        <%= f.input :client_name %>
        </div>
     <% end %>
@@ -48,9 +33,7 @@
       </div>
     <% end %>
   <% end %>
-</body>
-</html>
-	
+
 
 
 

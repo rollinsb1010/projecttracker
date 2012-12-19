@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(:version => 20121117201526) do
   end
 
   create_table "projects", :force => true do |t|
-    t.integer  "doclib_id"
     t.string   "project_name"
     t.datetime "due_date"
     t.string   "components"
@@ -49,10 +48,10 @@ ActiveRecord::Schema.define(:version => 20121117201526) do
     t.string   "project_manager_assigned"
     t.string   "account_manager_assigned"
     t.string   "medium"
-    t.string   "percentage_complete"
+    t.boolean  "complete",                 :default => false, :null => false
     t.string   "description"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
   end
 
 end

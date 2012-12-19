@@ -35,6 +35,8 @@ class ProjectsController < ApplicationController
      session[:project_params].deep_merge!(params[:project]) if params[:project]
      @project = Project.new(session[:project_params])  
      @project.current_step = session[:project_step]
+     
+     
      if @project.valid?
        if params[:back_button]
         @project.previous_step
@@ -51,7 +53,8 @@ class ProjectsController < ApplicationController
      else
         session[:project_step] = session[:project_params] = nil
         flash[:notice] = "project saved."
-        redirect_to @project       
+        redirect_to @project  
+         
      end
   end  
   
@@ -71,13 +74,13 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
       if @project.update_attributes(params[:project])
         flash[:notice] = "Successfully updated project."
-        redirect_to project_url
-      else
-      render :action => 'edit'
-      #respond_with(@project)  
-        #render "edit"
+        # redirect_to do |format|
+          # format.html {redirect_to projects_url}
+          # format.js
+        # end
      end 
   end 
+
   
   def destroy
      @project = Project.find(params[:id])
@@ -85,7 +88,9 @@ class ProjectsController < ApplicationController
      flash[:notice] = "Successfully destroyed project."
      redirect_to projects_url
      #respond_with(@project)
-  end    
-end
+  end 
+end     
+
+  
   
   

@@ -1,0 +1,16 @@
+<h2>Gather Materials</h2>
+
+
+<p>
+	<td> 
+		<%= form_for @project, remote: true do |f| %>
+		<%= f.label :project_name %><br />
+		<%= f.check_box :complete %>
+        <%= f.text_field :project_name %>
+        <%= link_to "Complete", method: :put, class:"btn btn-success" %>
+        <%= link_to "(remove)", @project, method: :delete, data:{confirm: "are you sure?"} %>
+        <% end %>
+	</td>	
+	
+</p>	
+	

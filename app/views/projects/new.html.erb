@@ -1,19 +1,16 @@
+
+
 <h3>Add New Project</h3>
 
 <%= render 'form' %>
 
 <%= link_to 'Back', projects_path %>
 
-
-		<%= form_for @project do |f| %>
   
-    <%= render "#{@project.current_step}_step", :f => f %>
- <p><%= f.submit "Continue" %></p>
- <p><%= f.submit "Back", :name => "previous_button" unless @project.first_step? %></p>
-  <% end %>
+   
+
 
  <p><%= link_to "Back to List", projects_path %></p>
-
 
 
 

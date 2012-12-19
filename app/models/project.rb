@@ -47,9 +47,15 @@ class Project < ActiveRecord::Base
     steps.all? do |step|
       self.current_step = step
       valid?
+    end
+  end   
 
-      end
-   end   
+  def active?
+    @project.complete == 'active'
+  end
+
+
+
 end
 
   

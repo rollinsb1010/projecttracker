@@ -1,7 +1,6 @@
 class CreateProjects < ActiveRecord::Migration
   def change
     create_table :projects do |t|
-      t.integer :doclib_id
       t.string   :project_name
       t.datetime :due_date
       t.string :components
@@ -10,7 +9,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :project_manager_assigned
       t.string :account_manager_assigned
       t.string :medium
-      t.string :percentage_complete
+      t.boolean :complete, :default => false, :null => false;
       t.string :description
       t.timestamps
     end
