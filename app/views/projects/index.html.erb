@@ -28,8 +28,8 @@
     <th colspan="1">Due Date</th>
     <th colspan="1">Components</th>
     <th colspan="1">Client Name</th>
-    <th colspan="1">Progress</th>
-    <th colspan="1">Attachments</th>
+    <!-- <th colspan="1">Progress</th> -->
+    <!-- th colspan="1">Attachments</th> -->
   </tr>
 </thead>
 <tbody
@@ -41,9 +41,8 @@
       <td><%= project.due_date %></td>
       <td><%= project.components %></td>
       <td><%= project.client_name %></td>
-      <td><%= project.complete %></td>
-      <td><div class="progressbar"></div></td>
-      <td><%= link_to project.project_name, project %></td>     
+      <!-- <td><%= project.complete %></td>
+      <td><div class="progressbar"></div></td> -->    
       <td><%= link_to(edit_project_path(project), class: "btn btn-small") do %>
           Edit <i class="icon-edit icon-white"></i></td></tr>
         <% end %>
