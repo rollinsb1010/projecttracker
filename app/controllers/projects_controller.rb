@@ -31,11 +31,6 @@ class ProjectsController < ApplicationController
      respond_with @project  
   end
   
-  def edit
-     @project = Project.find(params[:id])
-     respond_with @project
-  end 
-  
   
   def update
     @project = Project.find(params[:id])
@@ -57,6 +52,11 @@ class ProjectsController < ApplicationController
      redirect_to projects_url
      #respond_with(@project)
   end    
+
+  
+  def edit
+    @project = Project.find(params[:id])
+      render :action => 'edit'
+      # respond_with @wizard.current_step
+  end
 end
-  
-  

@@ -5,6 +5,7 @@
 <html>
 <head>
   <title>ProjectTrakker</title>
+   
   
 </head>
 <body class="index">
@@ -44,15 +45,23 @@
       <!-- <td><%= project.complete %></td>
       <td><div class="progressbar"></div></td> -->    
       <td><%= link_to(edit_project_path(project), class: "btn btn-small") do %>
-          Edit <i class="icon-edit icon-white"></i></td></tr>
+          Edit <i class="icon-edit icon-white"></i></td> 
         <% end %>
-       
+         <td><%= link_to(new_wizard_path(project), class: "btn btn-small") do %>
+          Track <i class="icon-edit icon-white"></i></td> 
+        <% end %>
     
     <% end %>
   <tr>
   <% else %>
     <td>No Projects Created<td>
   <% end %>
+  
+  
+ 
+       
+ 
+         
 </tr>
 </tbody>                                        
 </table>

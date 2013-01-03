@@ -1,46 +1,63 @@
-class WizardController::ProjectsController < ApplicationController
-
-#New Action for Custom WiZard
-   def new
-    session[:project_params] ||= {}
-    @project = Project.new(session[:project_params])
-    @project.current_step = session[:project_step]
-   end
-
-  #Custom Wizard Create Action
-   def create
-     session[:project_params].deep_merge!(params[:project]) if params[:project]
-     @project = Project.new(session[:project_params])  
-     @project.current_step = session[:project_step]
-     if @project.valid?
-       if params[:back_button]
-        @project.previous_step
-       elsif @project.last_step?   
-        @project.save if @project.all_valid?
-       else
-        @project.next_step
-       end
-       session[:project_step] = @project.current_step
-     end 
-     
-     if @project.new_record? 
-        render 'new'
+class WizardController < ApplicationController
+respond_to :html, :xml
+  
+  def index
+     @wizards = Wizard.all
+     respond_with @wizards
+  end
+  
+  def new
+     @wizard = Wizard.new
+     # respond_with @wizard
+  end
+  
+  def create
+     @wizard = wizard.new(params[:wizard])
+     if @wizard.save
+       cookies[:last_wizard_id] = @wizard.id
+       flash[:notice] = "Successfully created wizard."
+       # redirect_to @wizard.project
+        respond_with @wizard
      else
-        session[:project_step] = session[:project_params] = nil
-        flash[:notice] = "project saved."
-        redirect_to @project       
-     end
+       render :action => 'new'
+     end     
+  end
+  
+  
+  def edit
+    @wizard = wizard.find(params[:id])
+    respond_with @wizard
   end  
   
-   def update
-    @project = Project.find(params[:id])
-      if @project.update_attributes(params[:project])
-        flash[:notice] = "Successfully updated project."
-        redirect_to project_url
+  def update
+    @wizard = wizard.find(params[:id])
+      if @wizard.update_attributes(params[:wizard])
+        flash[:notice] = "Successfully updated wizard."
+        #redirect_to @wizards
+        respond_with @wizard
       else
-      render :action => 'edit'
-      #respond_with(@project)  
-        #render "edit"
-     end 
+        render :action => 'edit'
+      end  
+   end 
+ 
+ 
+  def destroy
+      @wizard = wizard.find(params[:id])
+      @wizard.destroy
+      flash[:notice] = "Successfully destroyed wizard."
+      respond_with @wizard
+  end
+  
+  def show
+      @wizard = wizard.find(params[:id])
+      #render :view => 'proposal_step'
+      respond_with @wizard 
+  end
+end  
+ 
 
-end
+
+
+  
+
+

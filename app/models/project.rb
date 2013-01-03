@@ -3,8 +3,8 @@ class Project < ActiveRecord::Base
        :account_manager_assigned, :medium, :complete, :description, :id
        
    belongs_to :admin 
-   has_many :attachments  
-   
+   has_many :attachments 
+   has_one :wizard
 end  
   
   

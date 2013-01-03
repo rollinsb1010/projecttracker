@@ -1,0 +1,13 @@
+<h2>Proposal Information</h2>
+<p>
+  <%= f.label Project.client_name %><br />
+  <%= f.text_field Project.client_name %>
+</p>
+<%= form_for @wizard do |f| %>
+  
+    <%= render "#{@wizard.current_step}_step", :f => f %>
+ <p><%= f.submit "Continue" %></p>
+ <p><%= f.submit "Back", :name => "previous_button" unless @wizard.first_step? %></p>
+  <% end %>
+
+ <p><%= link_to "Back to List", projects_path %></p>

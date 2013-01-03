@@ -1,12 +1,17 @@
 Projecttracker::Application.routes.draw do
 
-  # get "projects/index"
-  # get "attachments/index"
+ 
+ match "wizard" => "projects#show"
+ devise_for :admins
+ resources :projects
+ resources :wizard 
+ resources :attachments
+ 
+ 
 
-  devise_for :admins
-
-  resources :projects
-  resources :attachments
+  
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

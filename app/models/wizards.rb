@@ -1,13 +1,10 @@
 class Wizard < ActiveRecord::Base
-  attr_accessible :step_one_complete, :step_one_weight, :step_two_complete, 
-  :step_two_weight, :step_three_complete, :step_three_weight, :progress, :id, :project_id
+  # attr_accessible :title, :body
   
    attr_writer :current_step
-   
- belongs_to :project
   
-  # validates_presence_of :client_name, :if => :proposal?
-  # validates_presence_of :project_name, :if => :material?
+  validates_presence_of :client_name, :if => :proposal?
+  validates_presence_of :project_name, :if => :material?
 
   def current_step
     @current_step || steps.first
